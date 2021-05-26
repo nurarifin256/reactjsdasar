@@ -1,14 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Map from './Map';
+import Lifecycle from './Lifecycle';
 import reportWebVitals from './reportWebVitals';
+// import Map from './Map';
 // import Stateprops from './Stateprops';
 // import App from './App';
 // import Variabel from './Variabel';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Map />
+    <Lifecycle />
   </React.StrictMode>,
   document.getElementById('root')
 );
