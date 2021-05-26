@@ -1,6 +1,7 @@
 import React from 'react';
-import Header from './Header';
-import Navbar from './Navbar'
+// import Header from './Header';
+// import Navbar from './Navbar'
+import Variabel from './Variabel';
 
 // const Navbar = () => {
 //   return (
@@ -13,8 +14,9 @@ import Navbar from './Navbar'
 function App() {
   return (
     <div className="App">
-      <Navbar />
-      <Header />
+      {/* <Navbar /> */}
+      {/* <Header /> */}
+      <Variabel />
       <h2>Hello World</h2>
     </div>
   );
