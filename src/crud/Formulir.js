@@ -1,11 +1,11 @@
 import React from 'react'
 import { Form, Button } from 'react-bootstrap'
 
-const Formulir = ({nama, deskripsi, harga, handleChange, handleSubmit}) => {
+const Formulir = ({nama, deskripsi, harga, handleChange, handleSubmit, id}) => {
     return (
         <div className="mt-5">
             <row>
-                    <h2>Tambah Data</h2>
+                    <h2>{id ? "Edit Data" : "Tambah Data"}</h2>
                     <hr />
             </row>
             <row>
