@@ -10,6 +10,7 @@ const Formulir = ({nama, deskripsi, harga, handleChange, handleSubmit, id}) => {
             </row>
             <row>
                     <Form onSubmit={handleSubmit}>
+                        
                         <Form.Group controlId="nama">
                             <Form.Label>Nama Makanan</Form.Label>
                             <Form.Control type="text" placeholder="masukan nama makanan" name="nama" value={nama}

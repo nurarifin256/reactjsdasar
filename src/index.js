@@ -3,7 +3,8 @@ import ReactDOM from 'react-dom';
 import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-import Crud from './crud';
+// import Crud from './crud';
+import Mhs from './mhs';
 
 // import Map from './Map';
 // import Stateprops from './Stateprops';
@@ -12,7 +13,7 @@ import Crud from './crud';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Crud />
+    <Mhs />
   </React.StrictMode>,
   document.getElementById('root')
 );
