@@ -29,9 +29,9 @@ const Tabel = ({mhs, editData, hapusData}) => {
                                     <td>{m.jurusan}</td>
                                     <td>
 
-                                    <button className="btn btn-warning mr-2" onClick={() => editData(mhs.id)}>Edit</button>
+                                    <button className="btn btn-warning mr-2" onClick={() => editData(m.id)}>Edit</button>
 
-                                    <button className="btn btn-danger" onClick={() => hapusData(mhs.id)}>Hapus</button>
+                                    <button className="btn btn-danger" onClick={() => hapusData(m.id)}>Hapus</button>
 
                                     </td>
                                     </tr>

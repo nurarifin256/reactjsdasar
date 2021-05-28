@@ -27,17 +27,37 @@ export default class index extends Component {
 
         // console.log("data : ", this.state);
 
-        this.setState({
-            mhs: [
-                ...this.state.mhs,
-                {
-                    id: this.state.mhs.length+1,
-                    nama: this.state.nama,
-                    npm: this.state.npm,
-                    jurusan: this.state.jurusan
-                }
-            ]
-        })
+        if(this.state.id === ""){
+            this.setState({
+                mhs: [
+                    ...this.state.mhs,
+                    {
+                        id: this.state.mhs.length+1,
+                        nama: this.state.nama,
+                        npm: this.state.npm,
+                        jurusan: this.state.jurusan
+                    }
+                ]
+            })
+        } else {
+            const mhsSelainPilih = this.state.mhs.filter((m) => m.id !== this.state.id).map((filterMhs) => {
+                return filterMhs
+            }) 
+
+            this.setState({
+                mhs: [
+                    ...mhsSelainPilih,
+                    {
+                        id: this.state.mhs.length+1,
+                        nama: this.state.nama,
+                        npm: this.state.npm,
+                        jurusan: this.state.jurusan
+                    }
+                ]
+            })
+        }
+
+        
 
         this.setState({
             nama: "",
@@ -45,7 +65,31 @@ export default class index extends Component {
             jurusan: ""
         })
     }
+
+    hapusData = (id) => {
+        // console.log("id : ", id);
+
+        const mhsBaru = this.state.mhs.filter((m) => m.id !== id).map((filterMhs) => {
+            return filterMhs
+        })
+
+        this.setState({
+            mhs: mhsBaru
+        })
+    }
     
+    editData = (id) => {
+        const pilihMhs = this.state.mhs.filter((m) => m.id === id).map((filterMhs) => {
+            return filterMhs
+        })
+
+        this.setState({
+            nama: pilihMhs[0].nama,
+            npm: pilihMhs[0].npm,
+            jurusan: pilihMhs[0].jurusan,
+            id: pilihMhs[0].id
+        })
+    }
 
     render() {
         // console.log(this.state.mhs);
@@ -55,7 +99,7 @@ export default class index extends Component {
 
                 <Formulir {...this.state} handleChange={this.handleChange} handleSubmit={this.handleSubmit} />
 
-                <Tabel mhs={this.state.mhs} />
+                <Tabel mhs={this.state.mhs} hapusData={this.hapusData} editData={this.editData}/>
             </div>
         )
     }
